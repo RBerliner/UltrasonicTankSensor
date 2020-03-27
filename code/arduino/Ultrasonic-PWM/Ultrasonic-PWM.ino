@@ -6,8 +6,8 @@
  * 
  * Arduino UNO +5V    --> DYPA02YYUM Pin 1 Red
  * Arduino UNO GND    --> DYPA02YYUM Pin 2 Black
- * Arduino UNO Pin 11 --> DYPA02YYUM Pin 3
- * Arduino UNO Pin 10 --> DYPA02YYUM Pin 4
+ * Arduino UNO Pin 11 --> DYPA02YYUM Pin 3 Yellow
+ * Arduino UNO Pin 10 --> DYPA02YYUM Pin 4 White
  * 
  */
 

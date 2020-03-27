@@ -6,8 +6,8 @@
  * 
  * Arduino UNO +5V    --> DYPA02YYUM Pin 1 Red
  * Arduino UNO GND    --> DYPA02YYUM Pin 2 Black
- * Arduino UNO Pin 11 --> DYPA02YYUM Pin 3 Yellow
- * Arduino UNO Pin 10 --> DYPA02YYUM Pin 4 White
+ * Arduino UNO Pin 11 --> DYPA02YYUM Pin 3
+ * Arduino UNO Pin 10 --> DYPA02YYUM Pin 4
  * 
  */
 
@@ -16,6 +16,7 @@
 
 long duration;
 float distance;
+float tankDepth = 20;
 
 void setup()
 {
@@ -49,8 +50,16 @@ void loop()
   distance = duration;
   distance = distance / 58;
   
-  Serial.print(distance);
-  Serial.println(" cm");
+//  Serial.print(distance);
+//  Serial.println(" cm");
+	// Formate the data to send SignalK json strings.
+	
+   // TODO Chyange the code to reflect % tank filled
+   
+   Serial.print("{\"context\": \"vessels.self\",\"updates\": [ { \"values\" : [{\"path\": \"tanks.freshWater.Tank2\",\"value\" : ");
+     Serial.print(distance);
+     Serial.print("}],\"source\": { \"label\": \"\"}}]}");
+     Serial.print("\n");
   
-  delay(250);
+  delay(1000);
 }
